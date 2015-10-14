@@ -1,6 +1,20 @@
 # API 接口文档生成工具
 
+## 下载
+```
+go get github.com/nopsky/apidoc
+```
 
+## 安装
+```	
+make apidoc
+```
+
+## 使用
+
+```
+apidoc -path /data/doc -suffix .php -doc /data/apidoc
+```
 
 #目前支持的注释参数与格式要求如下:
 
