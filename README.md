@@ -1,6 +1,7 @@
 # API 接口文档生成工具
 
 ## 下载
+
 ```
 go get github.com/nopsky/apidoc
 ```
@@ -13,12 +14,22 @@ make
 ## 使用
 
 ```
-apidoc -doc doc -path exmaple -suffix .php
+apidoc -doc doc -path exmaple/ -suffix .php
+```
+
+## 特点
+```
+
+1.自动请求的路由自动生成文档路径
+
+2.自动生成API接口文档的索引文件
+
+3.自动生成接口的返回结果的示例说明
+
 ```
 
 #目前支持的注释参数与格式要求如下:
 
-```
 
 @name [name] [route] [desc]
 
