@@ -7,13 +7,13 @@ go get github.com/nopsky/apidoc
 
 ## 安装
 ```	
-make apidoc
+make
 ```
 
 ## 使用
 
 ```
-apidoc -path /data/doc -suffix .php -doc /data/apidoc
+apidoc -doc doc -path exmaple/ -suffix .php
 ```
 
 #目前支持的注释参数与格式要求如下:
