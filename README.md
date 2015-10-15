@@ -96,6 +96,8 @@ class CityController extends Controller {
 
 ```
 
+[查看示例](doc/index.md)
+
 1.`@class` : 用来归类接口
 
 名称|类路径
