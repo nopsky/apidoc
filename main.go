@@ -115,10 +115,11 @@ func main() {
 
 				p := newParse()
 				p.parseToken(lexer.tokenList)
-				name, route, apiDocText := p.makeMacDown(*docDir)
+
+				className, classPath, name, apiDocText := p.makeMacDown(*docDir)
 
 				//api文档文件的地址
-				docFile := docPath + "/" + route + ".md"
+				docFile := docPath + "/" + classPath + "/" + name + ".md"
 
 				//api文档目录
 				apiDocPath, err := filepath.Abs(filepath.Dir(docFile))
@@ -146,11 +147,11 @@ func main() {
 					panic(err)
 				}
 
-				if _, ok := index[route]; !ok {
-					index[route] = make(map[string]string)
+				if _, ok := index[className]; !ok {
+					index[className] = make(map[string]string)
 				}
 
-				index[route][name] = route + ".md"
+				index[className][name] = classPath + "/" + name + ".md"
 			}()
 		}
 	} else {
@@ -163,7 +164,6 @@ func main() {
 	
 	var indexContent = "##API 接口文档\n"
 	for k, v := range index {
-		k = filepath.Dir(k)
 		indexContent += "###"+k+"\n"
 		for kk, vv := range v {
 			indexContent += "* ["+kk+"]("+vv+")"

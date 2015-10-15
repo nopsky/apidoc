@@ -1,14 +1,9 @@
 package main
 
-import (
-	"fmt"
-)
-
-var docAuthorFormat = `
+var docAuthor = `
 
 > 作者
 
-%s  <%s>
 
 `
 
@@ -38,6 +33,14 @@ func (self *authorToken) parse(strArr []string) {
 
 //生成macdown文档
 func (self *authorToken) makeMacDown(){
-	self.doc = fmt.Sprintf(docAuthorFormat, self._author.username, self._author.email)
+	if self._author.username == "" {
+		self.doc = ""
+	} else {
+		self.doc = docAuthor + self._author.username
+
+		if self._author.email != "" {
+			self.doc += " <" + self._author.email + ">"
+		}		
+	}
 	return
 }
