@@ -2,7 +2,7 @@ package main
 
 
 import (
-	"fmt"
+	//"fmt"
 	"container/list"
 )
 
@@ -53,7 +53,7 @@ func (p *Parse) parseToken(tokenList list.List) {
 		case "@exmaple":
 			p.exmaple.parse(strArr)
 		default:
-			fmt.Println("未处理类型:", strArr[0])
+			//fmt.Println("未处理类型:", strArr[0])
 		}
 	}
 }
